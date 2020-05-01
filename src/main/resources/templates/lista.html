@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+	<thead>
+	<th>Nombres</th>
+	<th>Apellidos</th>
+	<th>Fecha Nacimiento</th>
+	<th>lugar Nacimiento</th>
+	<th>colegio</th>
+	<th>tel fijo</th>
+	<th>tel movil</th>
+	</thead>
+	<th:block th:each="estudiante, row: ${studentlist}">
+	<tr>
+		<th th:text="${estudiante.getNombres()}"/>
+		<th th:text="${estudiante.getApellidos()}"/>
+		<th th:text="${estudiante.getFechaNacimiento().toString()}"/>
+		<th th:text="${estudiante.getLugarNacimiento()}"/>
+		<th th:text="${estudiante.getColegio()}"/>
+		<th th:text="${estudiante.getTelfijo()}"/>
+		<th th:text="${estudiante.getTelmovil()}"/>
+	</tr>
+	</th:block>
+	
+</table>
+
+</body>
+</html>
