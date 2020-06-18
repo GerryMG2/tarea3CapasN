@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Lista de Estudiantes</h1>
+
+	<table>
+		<thead>
+			<th>Codigo</th>
+			<th>Nombre</th>
+			<th>apellido</th>
+			<th>carne</th>
+			<th>carrera</th>
+			<th>editar</th>
+		</thead>
+
+		<th:block th:each="estudiant, row: ${estudiantes}">
+
+			<tr>
+				<th th:text=${estudiant.codigo} />
+
+				<th th:text=${estudiant.Nombre} />
+
+				<th th:text=${estudiant.apellido} />
+
+				<th th:text=${estudiant.carne} />
+
+				<th th:text=${estudiant.carrera} />
+
+				<th>
+					<form action="#" th:action="@{/editarr}" th:object="${idcode}" method="post">
+						
+						Ingrese el mismo id: <input type="text" th:field="*{id}"  value="${estudiant.codigo}">
+						
+						 <input
+							type="submit" value="Editar">
+
+					</form>
+
+				</th>
+			</tr>
+		</th:block>
+
+	</table>
+
+	<a href="/inicio"> registro</a>
+
+</body>
+</html>
